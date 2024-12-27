@@ -1,0 +1,109 @@
+
+<section class="container pb-5 wow animate__animated animate__backInUp">
+  <h2 class="text-center fs-2 mb-5 fw-bold">Сделать заказ</h2>
+
+  <form class="row g-3" id="order-form" [formGroup]="orderForm" *ngIf="isFormDisplay">
+
+    <div class="offset-xl-3 col-xl-6">
+      <label for="inputProduct" class="form-label">Продукт</label>
+      <input disable type="text" class="form-control" id="inputProduct"
+             formControlName="product">
+    </div>
+
+    <div class="offset-xl-3 col-xl-6">
+      <hr>
+    </div>
+
+    <div class="offset-xl-3  col-sm-6 col-md-4 col-xl-2">
+      <label for="inputName" class="form-label">Имя</label>
+      <input type="text" class="form-control" id="inputName"
+             formControlName="name">
+      <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+        <div class="text-danger" *ngIf="name?.errors?.['required']">
+          Имя обязательное для заполнения
+        </div>
+        <div class="text-danger" *ngIf="name?.errors?.['pattern']">
+          Только буквы
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-xl-2">
+      <label for="inputSurname" class="form-label">Фамилия</label>
+      <input type="text" class="form-control" id="inputSurname" formControlName="last_name">
+      <div *ngIf="last_name?.invalid && (last_name?.dirty || last_name?.touched)">
+        <div class="text-danger" *ngIf="last_name?.errors?.['required']">
+          Фамилия обязательное для заполнения
+        </div>
+        <div class="text-danger" *ngIf="last_name?.errors?.['pattern']">
+          Только буквы
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-xl-2">
+      <label for="inputPhone" class="form-label">Телефон</label>
+      <input type="number" class="form-control" id="inputPhone" formControlName="phone">
+      <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
+        <div class="text-danger" *ngIf="phone?.errors?.['required']">
+          Обязательное для заполнения
+        </div>
+        <div class="text-danger" *ngIf="phone?.errors?.['phone']">
+          Телефон должен содержать 11 цифр
+        </div>
+      </div>
+    </div>
+
+    <div class="offset-xl-3 col-sm-6 col-md-6 col-xl-3">
+      <label for="inputCountry" class="form-label">Страна</label>
+      <input type="text" class="form-control" id="inputCountry" formControlName="country">
+      <div class="text-danger" *ngIf="country?.invalid && (country?.dirty || country?.touched) && country?.errors?.['required']">
+          Обязательное для заполнения
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6 col-xl-3">
+      <label for="inputIndex" class="form-label">Индекс</label>
+      <input type="text" class="form-control" id="inputIndex" autocomplete="off" onpaste="return false;" formControlName="zip">
+      <div class="text-danger" *ngIf="zip?.invalid && (zip?.dirty || zip?.touched) && zip?.errors?.['required']">
+        Обязательное для заполнения
+      </div>
+    </div>
+
+    <div class="offset-xl-3 col-xl-6">
+      <label for="inputAddress" class="form-label">Адрес</label>
+      <input type="text" class="form-control" id="inputAddress" formControlName="address">
+      <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+        <div class="text-danger" *ngIf="address?.errors?.['required']">
+          Обязательное для заполнения
+        </div>
+        <div class="text-danger" *ngIf="address?.errors?.['pattern']">
+          Можно вводить: буквы, цифры, пробелы, дефис и слеш
+        </div>
+      </div>
+    </div>
+
+    <div class="offset-xl-3 col-xl-6">
+      <hr>
+    </div>
+
+    <div class="offset-xl-3 col-xl-6">
+      <label for="inputComment" class="form-label">Комментарий к заказу</label>
+      <textarea name="" id="inputComment" cols="30" rows="2" class="form-control" formControlName="comment"></textarea>
+    </div>
+
+    <div class="offset-xl-3 col-xl-6">
+      <button [disabled]="orderForm.invalid" type="submit" class="btn btn-primary w-100" (click)="createOrder()">Отправить</button>
+    </div>
+  </form>
+  <div class="row" id="message" *ngIf="!isFormDisplay">
+    <div class="offset-xl-3 col-xl-6 fs-3 text-center text-success">
+      Спасибо за заказ. Мы свяжемся с вами в ближайшее время!
+    </div>
+  </div>
+  <div class="row" *ngIf="isFormError">
+    <div class="offset-xl-3 col-xl-6 fs-3 text-center text-danger">
+      Произошла ошибка. Попробуйте еще раз.!
+    </div>
+  </div>
+</section>

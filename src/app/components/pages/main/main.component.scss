@@ -1,0 +1,32 @@
+.main {
+  &__modal {
+    position: fixed;
+    background-color: rgba(47, 54, 91, 0.65);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    &-body {
+      position: relative;
+      background-color: #fff;
+      padding-inline: 50px;
+      padding-block: 70px;
+      text-align: center;
+      p {
+        font-size: 22px;
+        font-weight: 600;
+      }
+    }
+    &-close {
+      position: absolute;
+     right: 10px;
+      top: 10px;
+      font-size: 13px;
+      padding-inline: 10px;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+<section class="container">
+  <div class="slider wow animate__animated animate__backInUp">
+
+    <div class="slide-bg d-flex flex-column justify-content-center align-items-start p-5" style="background: url(assets/images/slider/slide1.jpg) right bottom;">
+      <div class="px-5 mx-4">
+        <div class="fw-bold fs-1 mb-4">Скидки на травянные чаи</div>
+        <div class="fs-5 py-5">Узай все подробности, в каталог</div>
+        <a [routerLink]="'/catalog'" class="btn btn-primary mt-4 px-5 hvr-buzz">Каталог</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="container mt-4 pt-5 wow animate__animated animate__backInUp">
+  <h2 class="text-center fs-2 mb-5 fw-bold">Ответы на часто задаваемые вопросы</h2>
+  <div class="row">
+    <div class="offset-xl-2 offset-lg-1 col-xl-8 col-lg-10">
+      <div id="accordion">
+        <h3 class="bg-primary border-0 p-4 mb-3 rounded-3 text-white fw-bold"><span class="d-block pe-5">Собираете ли вы подарочные боксы?</span></h3>
+        <div class="border-0">
+          <p>
+            Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+          </p>
+        </div>
+        <h3 class="bg-primary border-0 p-4 mb-3 rounded-3 text-white fw-bold">Сколько у вас разновидностей чая?</h3>
+        <div class="border-0">
+          <p>
+            Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+          </p>
+        </div>
+
+        <h3 class="bg-primary border-0 p-4 mb-3 rounded-3 text-white fw-bold">В какой срок осуществляется доставка?</h3>
+        <div class="border-0">
+          <p>
+            Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+          </p>
+        </div>
+        <h3 class="bg-primary border-0 p-4 mb-3 rounded-3 text-white fw-bold">У вас обновляется ассортимент?</h3>
+        <div class="border-0">
+          <p>
+            Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+          </p>
+        </div>
+        <h3 class="bg-primary border-0 p-4 mb-3 rounded-3 text-white fw-bold">Какого объема у вас пачки чая?</h3>
+        <div class="border-0">
+          <p>
+            Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</section>
+
+<div class="main__modal" *ngIf="isPopupOpen">
+  <div class="main__modal-body">
+    <button class="btn btn-danger main__modal-close" (click)="closePopup()">&#10006;</button>
+    <p>Посмотрите наши чайные коллекции</p>
+    <button class="btn btn-primary" [routerLink]="'/catalog'">Смотреть</button>
+  </div>
+</div>

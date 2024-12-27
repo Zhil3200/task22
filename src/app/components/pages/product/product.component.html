@@ -1,0 +1,27 @@
+<section>
+  <div class="container">
+
+    <div class="row mt-7">
+      <div class="col-md-5 mb-5 mb-md-0">
+        <img src='{{product.image}}' class="card-img-top" alt="фото продукции">
+      </div>
+
+      <div class="col-md-7 ps-md-6">
+
+        <div class="badge text-bg-dark mb-3">Чаяная коллекция</div>
+
+        <h1 class="h2 mb-4">{{product.title}}</h1>
+
+        <h4 class="text-success mb-4">{{product.price}} руб.</h4>
+
+        <p class="mb-4">{{product.description}}</p>
+
+        <div class="d-grid">
+          <a routerLink="/order" [queryParams]="{product: product.title}" class="btn btn-primary mb-0 w-100">Купить</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

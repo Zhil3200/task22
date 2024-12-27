@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: Arial;
+  src: url('assets/fonts/ArialMT.woff2') format('woff2'),
+  url('assets/fonts/ArialMT.woff') format('woff'),
+  url('assets/fonts/ArialMT.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Arial;
+  src: url('assets/fonts/Arial-BoldMT.woff2') format('woff2'),
+  url('assets/fonts/Arial-BoldMT.woff') format('woff'),
+  url('assets/fonts/Arial-BoldMT.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body, app-root {
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+//app-root {
+//  display: flex;
+//  flex-direction: column;
+//  justify-content: space-between;
+//  min-height: 100vh;
+//}
+header-component {
+  position: sticky;
+  top: 0;
+}
+footer-component {
+  margin-top: auto;
+}
+header {
+  .navbar-nav {
+    .nav-link.active {
+      color: #0d6efd;
+      font-weight: 900;
+    }
+  }
+}
+
+.ui-icon {
+  background-image: url("assets/icons/arrow-faq.svg");
+  width: 20px;
+  height: 20px;
+  transition: .3s;
+  background-position: 0 0;
+  position: absolute;
+  right: 28px;
+  top: 28px;
+}
+.ui-state-active .ui-icon {
+  background-image: url("assets/icons/arrow-faq.svg");
+  transform: rotate(180deg);
+}
+.ui-state-hover .ui-icon {
+  background-image: url("assets/icons/arrow-faq.svg");
+}
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched{
+  border-color: red;
+}
