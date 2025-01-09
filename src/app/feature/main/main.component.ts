@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Observable, Subscribable, Subscription} from "rxjs";
+import {Observable, Subscription} from "rxjs";
 declare var $: any;
 @Component({
   selector: 'main-component',

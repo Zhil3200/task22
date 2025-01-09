@@ -1,35 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
-import { HeaderComponent } from './components/common/header/header.component';
-import { FooterComponent } from './components/common/footer/footer.component';
-import { MainComponent } from './components/pages/main/main.component';
-import { CatalogComponent } from './components/pages/catalog/catalog.component';
-import { OrderComponent } from './components/pages/order/order.component';
-import { ProductComponent } from './components/pages/product/product.component';
-import {ProductService} from "./services/product.service";
-import { ShortDescrPipe } from './pipes/short-descr.pipe';
-import {ReactiveFormsModule} from "@angular/forms";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {SharedModule} from "./shared/shared.module";
+import {ProductService} from "./shared/services/product.service";
+import {MainModule} from "./feature/main/main.module";
+import {OrderModule} from "./feature/order/order.module";
+import {ProductsModule} from "./feature/products/products.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    MainComponent,
-    CatalogComponent,
-    OrderComponent,
-    ProductComponent,
-    ShortDescrPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    MainModule,
+    OrderModule,
+    ProductsModule,
+    NgbModule,
+    SharedModule,
+    AppRoutingModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
